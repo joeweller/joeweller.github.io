@@ -18,8 +18,12 @@ gem "minima", "~> 2.5"
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed", "~> 0.9"
 end
+
+gem "rouge", "~> 3.26.0"
+gem "terminal-table", "~> 1.4"
+gem "jekyll-sass-converter", "~> 1.5.2"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
