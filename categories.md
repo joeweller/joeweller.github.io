@@ -14,9 +14,13 @@ permalink: /categories/
 <div id="archives">
 {% for category in categories %}
   <div class="archive-group">
-    <div id="#{{ category }}"></div>
-    <p></p>
-    <a name="{{ category }}" href="{{ site.baseUrl }}/{{ category }}"><h3 class="category-head">{{ category }}</h3></a>
+    <div id="{{ category | capitalize }}"></div>
+    <br />
+    <a href="{{ site.baseurl }}/{{ category }}">
+      <h3 class="category-head">
+        {{ category | capitalize }}
+      </h3>
+    </a>
   </div>
 {% endfor %}
 </div>

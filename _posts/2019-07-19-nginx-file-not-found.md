@@ -1,8 +1,21 @@
 ---
 layout: post
 title: "NGINX : failed (2: No such file or directory) in /etc/nginx/nginx.conf"
-date: 2021-11-04 23:39:20 +0000
-categories: debug
+date: 2019-07-19 21:39:02 +0000
+categories: debug blog
+keywords:
+  - nginx
+  - configuration
+  - linux
+  - webserver
+  - http
+  - no such file or directory
+  - symbolic links
+  - ln -s
+  - ls -la
+  - server
+description: |
+  Tips: solve (2: No such file or directory) configuration errors in NGINX
 ---
 
 My first configuration of an NGINX server left me high and dry for a while. Coming from an Apache back-ground (where everything is done for you), NGINX felt a little archaic at first.
@@ -17,18 +30,18 @@ This is the error (above) was being shown with any of the following commands :
 
 Testing the configuration:
 
-- `sudo nginx -t`
+- `$ sudo nginx -t`
 
 Starting or reloading the service:
 
-- `sudo service nginx restart`
-- `sudo nginx -s reload`
+- `$ sudo service nginx restart`
+- `$ sudo nginx -s reload`
 
 `nginx: [emerg] open() "/etc/nginx/sites-enabled/mysite.co.uk" failed (2: No such file or directory) in /etc/nginx/nginx.conf:62`
 
 This message is a bit vague, but there is a subtle hint here. The last path is pointing to the file containing the problem and the appended number correlates to the specific line number in that file.
 
-In my case, line 62 was:
+In my case, `line 62` was:
 `include /etc/nginx/sites-enabled/\*;`
 
 I know the syntax of the line is correct because I compared it with the default file included in the installation.

@@ -4,10 +4,17 @@ title: Blog
 permalink: /blog/
 ---
 
-<div id="archives">
-    {% for post in site.categories["blog"] %}
-    <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-    </article>
-    {% endfor %}
+<div class="home">
+<h2 class="post-list-heading">Posts</h2>
+  <ul class="post-list">
+  {% for post in site.categories["blog"] %}
+    <li><span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
+      <h3>
+        <a class="post-link" href="{{ site.baseurl }}/{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h3>
+    </li>
+  {% endfor %}
+  </ul>
 </div>

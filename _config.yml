@@ -29,8 +29,8 @@ domain: "joeweller.github.io" # the base hostname & protocol for your site, e.g.
 github_username: joeweller
 
 header_pages:
+  - projects.md
   - categories.md
-  - about.md
 
 # Build settings
 theme: minima
