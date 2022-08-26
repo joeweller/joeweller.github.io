@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Debug
-permalink: /debug/
+permalink: debug/
 ---
 
 <div class="home">
