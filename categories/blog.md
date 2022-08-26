@@ -10,7 +10,7 @@ permalink: /blog/
   {% for post in site.categories["blog"] %}
     <li><span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
       <h3>
-        <a class="post-link" href="{{ site.url }}/{{ post.url }}">
+        <a class="post-link" href="{{ site.url }}{{ post.url }}">
           {{ post.title }}
         </a>
       </h3>
